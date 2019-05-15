@@ -1,0 +1,37 @@
+{
+  "name": "yyjsgame",
+  "version": "0.0.1",
+  "description": "양디고 홍보용 게임",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --mode=development",
+    "prod": "webpack --mode=production",
+    "help": "webpack -h"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gondr99/yyjsgame.git"
+  },
+  "keywords": [
+    "game",
+    "javascript",
+    "socket"
+  ],
+  "author": "gondr",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gondr99/yyjsgame/issues"
+  },
+  "homepage": "https://github.com/gondr99/yyjsgame#readme",
+  "devDependencies": {
+    "css-loader": "^2.1.1",
+    "mini-css-extract-plugin": "^0.6.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.31.0",
+    "webpack-cli": "^3.3.2"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "socket.io": "^2.2.0"
+  }
+}
