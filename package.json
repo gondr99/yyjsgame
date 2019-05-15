@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "webpack --mode=development",
     "prod": "webpack --mode=production",
-    "help": "webpack -h"
+    "help": "webpack -h",
+    "watch": "webpack --watch"
   },
   "repository": {
     "type": "git",
