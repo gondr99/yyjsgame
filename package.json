@@ -10,7 +10,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gondr99/yyjsgame.git"
+    "url": "https://github.com/gondr99/yyjsgame.git"
+    
   },
   "keywords": [
     "game",
