@@ -22,6 +22,7 @@ app.use(router);
 
 //게임서버 관련 변수들
 const players = {};
+const imgList = ['player1', 'player2'];
 
 //소켓IO 프로토콜
 io.on('connection', (soc) => {
@@ -33,13 +34,23 @@ io.on('connection', (soc) => {
         x: floor(random() * 700) + 50,
         y: floor(random() * 500) + 50,
         playerId: soc.id,
-        team: floor(random() * 2 ) == 0 ? 'red' : 'blue'
+        team: floor(random() * 2 ) == 0 ? 'red' : 'blue',
+        sprite: imgList[floor(random() * imgList.length)] //랜덤한 스프라이트 선택
     }
     //해당 플레이어에게 모든 플레이어 리스트 보내주기
     soc.emit('currentPlayers', players);
 
     //자신을 제외한 모든 플레이어게 브로드캐스트로 전송
     soc.broadcast.emit('newPlayer', players[soc.id]); 
+
+    //이동에 관한 처리
+    soc.on('playerMovement', (movementData)=>{
+        players[soc.id].x = movementData.x;
+        players[soc.id].y = movementData.y;
+        players[soc.id].rotation = movementData.r;
+
+        soc.broadcast.emit('playerMoved', players[soc.id]);
+    });
 
     soc.on('disconnect', () => {
         console.log('user disconnected : ' + soc.id);
