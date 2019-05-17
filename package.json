@@ -26,6 +26,8 @@
   "homepage": "https://github.com/gondr99/yyjsgame#readme",
   "devDependencies": {
     "css-loader": "^2.1.1",
+    "eslint": "^5.16.0",
+    "jshint": "^2.10.2",
     "mini-css-extract-plugin": "^0.6.0",
     "style-loader": "^0.23.1",
     "webpack": "^4.31.0",
